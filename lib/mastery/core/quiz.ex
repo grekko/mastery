@@ -45,7 +45,7 @@ defmodule Mastery.Core.Quiz do
       |> inc_record()
       |> save_response(response)
 
-    maybe_advance(new_quiz, mastered?(quiz))
+    maybe_advance(new_quiz, mastered?(new_quiz))
   end
 
   def answer_question(quiz, %Response{correct: false} = response) do
