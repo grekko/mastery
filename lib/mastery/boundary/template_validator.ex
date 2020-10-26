@@ -22,7 +22,7 @@ defmodule Mastery.Boundary.TemplateValidator do
   def validate_instructions(_instructions), do: {:error, "must be a binary"}
 
   def validate_raw(raw) when is_binary(raw) do
-    check(String.match?(raw, ~s{\S}), {:error, "can't be blank"})
+    check(String.match?(raw, ~r{\S}), {:error, "can't be blank"})
   end
 
   def validate_raw(_raw), do: {:error, "must be a string"}
