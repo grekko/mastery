@@ -26,7 +26,7 @@ defmodule Mastery.Boundary.Validator do
 
   def check_field(:ok, _errors, _field_name), do: :ok
 
-  def check_field({:ok, message}, errors, field_name) do
+  def check_field({:error, message}, errors, field_name) do
     errors ++ [{field_name, message}]
   end
 
