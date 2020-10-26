@@ -19,5 +19,5 @@ defmodule Mastery.Boundary.QuizValidator do
     check(mastery >= 1, {:error, "must be greater than zero"})
   end
 
-  def validate_mastery(mastery), do: {:error, "must be an integer"}
+  def validate_mastery(_mastery), do: {:error, "must be an integer"}
 end
