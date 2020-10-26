@@ -28,7 +28,7 @@ defmodule Mastery.Examples.Math do
   end
 
   def quiz() do
-    quiz_fields
+    quiz_fields()
     |> Quiz.new()
     |> Quiz.add_template(template_fields())
   end
