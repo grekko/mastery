@@ -19,8 +19,8 @@ defmodule Mastery do
 
   def take_quiz(title, email) do
     with %Quiz{} = quiz <- QuizManager.lookup_quiz_by_title(title),
-         {:ok, _} <- GenServer.take_quiz(quiz, email) do
-       {title, email}
+         {:ok, _} <- QuizSession.take_quiz(quiz, email) do
+      {title, email}
     else
       error -> error
     end
